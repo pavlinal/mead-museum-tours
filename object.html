@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--Could the title be updated dynamically?-->
-  <title>Mead Museum Tours - Object</title>
-  <link rel="stylesheet" href="mmtstyle.css">
 </head>
 
 <body>
-  <div id="banner">
-    <h1>Mead Museum Tours</h1>
-  </div>
+  <div id="content">
+    <div class="box">
+      <!--Object Title-->
+      <div class="objecttitle">
+        <h1>The Poet (Le poète)</h1>
+      </div>       
+    </div>     
+    <!--Update dynamically using data from the database-->
+    <div class="box">
+      <div class="container">     
+        <div class="row">
+          <div class="col-sm-6">
+            <img class="img-responsive" src="img/ThePoet.jpg" alt="ObjectPhoto"> 
+          </div>
+          <div class="col-sm-6" style="font-size: 1.5em">
 
-  <div id="navigation">
-    <a class="navigationselection" href="index.html">Home</a>
-    <a class="navigationselection" href="objects.html">Objects By Name</a>
-  </div>
+            <div class="objecttext">
+              <div class="objectinfo">
+                <div class="title">The Poet (Le poète)</div>
+                <div class="maker">Jean Alexandre Joseph Falguière</div>
+                <div class="culture">French (1831-1900)</div>
+                <div class="materials">Bronze</div>
+                <div class="place"></div>
+                <div class="measurments"></div>
+                <div class="nid"></div>
+                <div class="creditline">Museum purchase</div>
+              </div>
+              <!-- Should only be included if there is indeed extra text. Will need to add js later -->
+              <a href="" onclick="return onClickExpand();"><img src="img/icons/text.svg" alt="Expand" style="margin: 20px; width: 10%"></a>
+              <div class="extratext" style='display: none'>
+              <p class="small">
+                Jean-Alexandre-Joseph Falguière submitted this composition to an 1897 competition, held at the Salon in Paris, for a monument to French poet Victor Hugo. The sculptor shows the poet riding the divine winged horse Pegasus and holding a lyre, an instrument associated with the arts, lyricism, and the virtues of moderation and equilibrium. According to Greek mythology, the god Hermes created the lyre from a tortoise shell covered with animal hide and antelope horns. 
 
-  <!--Update dynamically using data from the database-->
-  <div class="objectdescription">
-    <div class="title"></div>
-    <div class="maker"></div>
-    <div class="culture"></div>
-    <div class="materials"></div>
-    <div class="place"></div>
-    <div class="measurments"></div>
-    <div class="nid"></div>
-    <div class="creditline"></div>
-  </div>
+                Falguière modeled from nature. While his naturalistic approach to mythological motifs provoked criticism from the Académie des Beaux-Arts, his lively sculptures suited the taste of his contemporaries. Poet Paul-Armand Silvestre characterized Falguière as “the purest representative of the Greek tradition in our French sculpture,” and the state bought his works frequently for public display. Although the jury didn’t choose The Poet as the winning monument, a large version was erected in Paris’s Square de l’Opéra-Louis-Jouvet, which it graces to this day.
+              </p>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="objectsound"><a href="sound.mp3"><img class="clickableicon" src="img/icons/musical-note.svg" alt="MusicNote"></a></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="objectvideo"><a href="video.avi"><img class="clickableicon" src="img/icons/play-circle.svg"></a></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="objectlocation"><a href="map.html"><img class="clickableicon" src="img/icons/map-marker.svg"></a></div>
+              </div>
+            </div>
 
-  <div class="objectimage"><img src="object.jpg" alt="object_name"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   
-  <div class="objectsound"><a href="sound.mp3">Hear It</a></div>
-
-  <div class="objectvideo"><a href="video.avi">Watch It</a></div>
-
-  <div class="objectlocation"><a href="map.html">Show on map</a></div>
-
+  
+</div>
+</div>
 </body>
 
 </html> 
