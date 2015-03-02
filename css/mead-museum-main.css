@@ -35,7 +35,8 @@ img {
 }
 
 .clickableicon {
-    width: 25%;
+    width: 35px;
+    margin: 10px;
 }
 
 .objecttitle {
@@ -83,6 +84,7 @@ img {
     color: #f8f8f8;
     background: url(../img/brownmead.jpg) no-repeat center center;
     background-size: cover;
+    min-height: 100%;
 }
 
 .intro-message {
