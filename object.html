@@ -42,22 +42,34 @@
             </div>
             <div class="row">
               <div class="col-sm-4">
-                <div class="objectsound"><a href="sound.mp3"><img class="clickableicon" src="img/icons/musical-note.svg" alt="MusicNote"></a></div>
+                <div class="objectsound"><a href="" onclick="return onClickAudio();"><img class="clickableicon" alt="Play Sound" src="img/icons/musical-note.svg" alt="MusicNote"></a></div>
               </div>
               <div class="col-sm-4">
-                <div class="objectvideo"><a href="video.avi"><img class="clickableicon" src="img/icons/play-circle.svg"></a></div>
+                <div class="objectvideo"><a href="" onclick="return onClickVideo();"><img class="clickableicon" alt="Play Video" src="img/icons/play-circle.svg"></a></div>
               </div>
               <div class="col-sm-4">
-                <div class="objectlocation"><a href="map.html"><img class="clickableicon" src="img/icons/map-marker.svg"></a></div>
+                <div class="objectlocation"><a href="" onclick="return onClickMap();"><img class="clickableicon" src="img/icons/map-marker.svg"></a></div>
               </div>
             </div>
-
+            <div class="audio" style="display: none">
+              <audio controls>
+                  <source src="sound/OldPine.mp3" type="audio/mpeg">
+                    Your browser does not support this audio element.
+              </audio>
+            </div>
+            <div class="video" style='display: none'>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HbCBxlxsXdY?rel=0"></iframe>
+              </div>
+            </div>
+            <div class="map" style="display: none">
+              <img class="img-responsive" alt="Map of Mead Museum" src="img/meadgooglemap.jpg">
           </div>
 
         </div>
       </div>
     </div>
-  
+
   
 </div>
 </div>

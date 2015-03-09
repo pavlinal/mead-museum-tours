@@ -59,6 +59,19 @@
          return false;
     }
 
+    function onClickAudio(){
+        $('.audio').slideToggle('fast');
+         return false;
+    }
+    function onClickVideo(){
+        $('.video').slideToggle('fast');
+         return false;
+    }
+    function onClickMap(){
+        $('.map').slideToggle('fast');
+         return false;
+    }
+
     function changePageHash(){
         if(location.hash != ''){
             var url = location.hash.substring(1) + ".html";
@@ -127,10 +140,7 @@
                                 <a href="#object" data-url="object.html" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Object Test</span></a>
                             </li>
                             <li>
-                                <a href="#objectsbyname" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Objects By Name</span></a>
-                            </li>
-                            <li>
-                                <a href="#objectsbynumber" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Objects By Number</span></a>
+                                <a href="#search" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Search</span></a>
                             </li>
                             <li>
                                 <a href="#tours" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Tours</span></a>
