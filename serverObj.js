@@ -16,6 +16,9 @@ pool.getConnection(function(err, connection) {
 	if (err) throw err;
    	else {
         	console.log('Connection was sucessful');
+          console.log (result.title  + result.makers + result.culture + result.date + 
+      result.materials+ result.measurements+ result.asc_num+ result.credit_line
+      + result.desc + result.room+ result.pic + result.sound + result.video + result.tour + result.tour_order)
     }
     // And done with the connection.
     connection.release();
