@@ -12,10 +12,15 @@ var pool = mysql.createPool({
 // Connect to the database
 pool.getConnection(function(err, connection) {
   // Use the connection
-  connection.query( 'SELECT something FROM sometable', function(err, rows) {
+  connection.query( 'select id, title from objects', function(err, result, fields) {
 	if (err) throw err;
    	else {
         	console.log('Connection was sucessful');
+		console.log('Number of objects: ' + result.length);
+		for (var i in result) {
+            		var object = result[i];
+            		console.log(object.id +': '+ object.title);
+       		}
     }
     // And done with the connection.
     connection.release();
