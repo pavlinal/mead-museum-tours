@@ -11,11 +11,15 @@ var pool = mysql.createPool({
 
 // Connect to the database
 pool.getConnection(function(err, connection) {
-  if (err) {
-    console.error('error connecting: ' + err.stack);
-    return;
+  // Use the connection
+  connection.query( 'SELECT something FROM sometable', function(err, rows) {
+	if (err) throw err;
+   	else {
+        	console.log('Connection was sucessful');
     }
-    
-     console.log('connected as id ' + connection.threadId);
-});
+    // And done with the connection.
+    connection.release();
 
+    // Don't use the connection here, it has been returned to the pool.
+  });
+});
