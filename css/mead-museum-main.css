@@ -17,6 +17,8 @@ h4,
 h5 {
     font-family: 'Cinzel', serif;
     font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 h6 {
@@ -62,7 +64,7 @@ img {
     font-size: 1.5em;
 }
 
-.objecttext {
+.insetbox {
     display: block;
     padding: 9.5px;
     margin: 0 0 10px;
@@ -73,8 +75,7 @@ img {
 
 }
 .box {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px;
     padding: 30px 15px;
     background: rgba(245,245,245, 0.9);
 }
