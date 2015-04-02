@@ -17,7 +17,9 @@ var app = express();
 
 //to test
 console.log("query: " + url.format(query)); 
-
+console.log("req query" + req.query('id'));
+console.log ("query.id" + query.id);
+console.log ("location" + location);
 
 // A route to list all users and provide a form to add more.
 app.get('/users', function (req, res) {
@@ -37,31 +39,25 @@ app.get('/users', function (req, res) {
 
   var obj = 'select * from objects where id=' + urlID;
   return obj;
-  /*
-//display db content in table
-        result.forEach( function(user){
-           table+= '<tr>';
-       //console.log(user.uid);
-       //console.log(user.fname);;
-           table+= '<td>' + user.uid + '</td>';
-           table+= '<td>' + user.fname + '</td>';
-           table+= '<td>' + user.lname + '</td>';
-           table+= '<td>' + user.password + '</td>';
-           table+= '<td>' + user.age + '</td>';
-           table+= '</tr>';
-   });
- */
 }}    
 );
 });
- 
- 
-//add user data from form to database
-app.get('/users/add', function (req, res) {
-//db.add (function(err,result){
 
-}
-});
+
+function getObjFromUrl (query){
+//pull title from url
+ // var titleUrl = query.parse(...);
+
+  //querystring.parse?
+
+//pull from database
+//check syntax
+  var obj = 'select * from objects where id=' + query.id;
+  return obj;}
+
+ 
+ 
+
  
  
 //start the server

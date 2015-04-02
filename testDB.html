@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="linkDB.js" ></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js" ></script>
+<!-- Javascript Functions -->
+   <script type="text/javascript"> 
+   $(document).ready(function(){
+       console.log("ready");
+       app.get('/users', function (req, res);
+       function getObjFromUrl (query);
+   });
+
+   function onClickExpand(){
+       $('.extratext').slideToggle('fast');
+        return false;
+   }
+
+   function onClickAudio(){
+       $('.audio').slideToggle('fast');
+        return false;
+   }
+   function onClickVideo(){
+       $('.video').slideToggle('fast');
+        return false;
+   }
+   function onClickMap(){
+       $('.map').slideToggle('fast');
+        return false;
+   }
+   function onClickExpandTour(){
+       $('.tourdescription').slideToggle('fast');
+        return false;
+   }
+
+   function changePageHash(){
+       if(location.hash != ''){
+           var url = location.hash.substring(1);
+           var startQuery = url.indexOf("?");
+           if(startQuery > -1){
+               url = url.substring(0, startQuery);
+           }
+           url = url + ".html";
+       }
+
+       console.log("Url: "+ url);
+
+       $.ajax({ 
+           type: 'GET',
+           url: url,
+           success: function(data) {
+               $('#content').fadeOut(300, function() {
+                   $('#content').html(data).delay(200).fadeIn(300);
+               });
+           } 
+       }); 
+   }
+
+   </script>
+</head>
+<body>
+	<div>this page is to test dynamic DB linking</div>
+</body>
