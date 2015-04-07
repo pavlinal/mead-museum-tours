@@ -54,11 +54,6 @@ function getObjFromUrl (query){
 //check syntax
   var obj = 'select * from objects where id=' + query.id;
   return obj;}
-
- 
- 
-
- 
  
 //start the server
   var server = app.listen(3000, function () {
