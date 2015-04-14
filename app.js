@@ -42,7 +42,6 @@ app.get('/objects', function(req, res){
   connection.query( 'select * from objects', function(err, result, fields) {
     if (err) throw err;
     res.render('objects', {page_title:"Objects", objects:result});
-		
     // End the connection.
     connection.end();
   });
