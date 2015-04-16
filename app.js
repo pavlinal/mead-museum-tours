@@ -1,61 +1,33 @@
-// Module dependencies
 var express = require('express');
-var mysql = require('mysql');
-var hbs = require('hbs');
+
+// Regular express built-in middleware:
 var path = require('path');
 
-//var http = require('http');
-
-//load objects route
+// Routes:
 var objects = require('./routes/objects');
+var main = require('./routes/main');
 
+// Create the express application:
 var app = express();
 
-// Configure MySQL parameters.
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'marylyon',
-  database: 'meadmuseum'
-});
-
+// Setup the view engine:
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
-app.engine('html', hbs.__express);
-//app.use(express.bodyParser());
+app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Using routes:
+app.use('/objects', objects);
+app.use('/', main);
 
-// Connect to database.
-connection.connect(function(err){
-  if(err){
-    console.log("There was a problem connecting to the database: " + err);
-  }
-  else{
-    console.log("The connection to the database was sucessful.");
-  }
+app.get('/', function (req, res) {
+  res.redirect('/index');
 });
 
-// Query the database.
-app.get('/objects', function(req, res){
-  connection.query( 'select * from objects', function(err, result, fields) {
-    if (err) throw err;
-    res.render('objects', {page_title:"Objects", objects:result});
-		
-    // End the connection.
-    connection.end();
-  });
-});
+// Export the app as the module:
+module.exports = app;
 
-app.get('/', function(req, res) {
-  res.sendfile('./views/index.html');
-});
-
-/*app.get('/objects', function(req, res) {
-  res.render('objects', {title: "Objects", objects:objects.getObjects()});
+/*var server = app.listen(3000, function () {
+  console.log('Listening on port %d', server.address().port);
 });*/
 
-var server = app.listen(3000, function () {
-  console.log('Listening on port %d', server.address().port);
-});

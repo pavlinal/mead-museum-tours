@@ -1,0 +1,8 @@
+{
+    "name"     : "db",
+    "verstion" : "0.0.1",
+    "author"   : "Pavlina Lejskova <lejsk22p@mtholyoke.edu>",
+    "description" : "a library for accessing the db",
+    "main": "./db.js"
+}
+

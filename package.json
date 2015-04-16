@@ -2,15 +2,17 @@
   "name": "mmtours",
   "version": "0.0.1",
   "description": "The Mead Museum Tours is an application developed for the Mead Art Museum. It allows the museum visitors to access interactive material associated with some of the objects in the museum.",
-  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/plejskova/mead-museum-tours"
   },
+  "scripts": {
+    "start": "node ./bin/www"
+  },
   "dependencies": {
     "express": "4.2.x",
-    "hbs": "^3.0.1",
-    "jade": "^1.9.2",
+    "debug": "~2.0.0",
+    "ejs": "~0.8.5",
     "mysql": "^2.6.1"
   }
 }
