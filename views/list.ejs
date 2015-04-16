@@ -1,0 +1,14 @@
+<!-- views/list.ejs -->
+
+<% include partials/head %>
+<% include partials/header %>
+
+    <h1><%= title %></h1>
+ 
+    <% for(var id in objects) { %>
+        <p>
+            <%= objects[id].id %> .  <%= objects[id].title %>
+        </p>
+    <% } %>
+
+<% include partials/footer %>

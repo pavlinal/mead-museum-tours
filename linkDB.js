@@ -11,6 +11,8 @@ var url_parts = url.parse(request.url, true);
 //var http = require('http');
 
 //load objects route
+//UPDATE FOLDERS - PLACE OBJECT.JS IN ROUTES FOLDER
+//var objects = require('./routes/objects');
 var objects = require('./routes/objects');
 
 //create an app
@@ -31,15 +33,6 @@ app.engine('html', hbs.__express);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-//store URL query
-var query = url_parts.query;
-
-
-//to test
-console.log("query: " + url.format(query)); 
-console.log("req query" + req.query('id'));
-console.log ("query.id" + query.id);
-console.log ("location" + location);
 
 // Connect to database.
 connection.connect(function(err){
@@ -51,29 +44,38 @@ connection.connect(function(err){
   }
 });
 
+
+//store URL query
+var query = url_parts.query;
+
+
+//to test
+console.log("query: " + url.format(query)); 
+console.log("req query('id'): " + req.query('id'));
+console.log ("query.id: " + query.id);
+console.log ("location: "  + location);
+
 // Query the database.
 app.get('/objects', function(req, res){
    var urlID = query.id;
   connection.query( 'select * from objects where id=' + urlID, function(err, result, fields) {
     if (err) throw err;
-    res.render('objects', {page_title:"Objects", objects:result});
-     console.log ("error, cannot locate object");
+    res.render('object', {page_title:"Object", object:result});
+    // console.log ("error, cannot locate object");
     // End the connection.
     connection.end();
   });
 });
 
 app.get('/', function(req, res) {
-  res.sendfile('./views/index.html');
+  res.sendfile('./views/object.html');
 });
-
-/*app.get('/objects', function(req, res) {
-  res.render('objects', {title: "Objects", objects:objects.getObjects()});
-});*/
 
 var server = app.listen(3000, function () {
   console.log('Listening on port %d', server.address().port);
 });
+
+
 /*
 // A route to list all users and provide a form to add more.
 app.get('/users', function (req, res) {
