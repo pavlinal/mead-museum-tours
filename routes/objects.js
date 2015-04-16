@@ -15,4 +15,10 @@ router.get('/list', function(req, res) {
   }); 
 });
 
+/*GET test*/
+router.get('/basictest', function(req, res) {
+  res.render('basictest', {title:'Basic Test'});
+});
+
+
 module.exports = router;
