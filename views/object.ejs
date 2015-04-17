@@ -1,0 +1,82 @@
+<% include partials/head %>
+
+<% include partials/header %>
+
+<div id="content" class="basic">
+  <div class="box">
+    <div class="objecttitle">
+      <!-- object title -->
+      <h1>The Poet (Le poète)</h1>
+    </div>       
+  </div>     
+  <div class="box">
+    <div class="container">     
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- src should be path to object's photo -->
+          <img class="img-responsive" src="img/ThePoet.jpg" alt="ObjectPhoto"> 
+        </div>
+        <div class="col-sm-6" style="font-size: 1.5em">
+
+          <div class="insetbox">
+            <!-- all dynamically inserted -->
+            <div class="objectinfo">
+              <div class="title">The Poet (Le poète)</div>
+              <div class="maker">Jean Alexandre Joseph Falguière</div>
+              <div class="culture">French (1831-1900)</div>
+              <div class="materials">Bronze</div>
+              <div class="place"></div>
+              <div class="measurments"></div>
+              <div class="nid"></div>
+              <div class="creditline">Museum purchase</div>
+            </div>
+            <!-- Should only be included if there is indeed extra text for the object-->
+            <a href="" onclick="return onClickExpand();"><img src="img/icons/text.svg" alt="Expand" style="margin: 20px; width: 10%"></a>
+            <div class="extratext" style='display: none'>
+              <div class="textblock">
+                Jean-Alexandre-Joseph Falguière submitted this composition to an 1897 competition, held at the Salon in Paris, for a monument to French poet Victor Hugo. The sculptor shows the poet riding the divine winged horse Pegasus and holding a lyre, an instrument associated with the arts, lyricism, and the virtues of moderation and equilibrium. According to Greek mythology, the god Hermes created the lyre from a tortoise shell covered with animal hide and antelope horns. 
+
+                Falguière modeled from nature. While his naturalistic approach to mythological motifs provoked criticism from the Académie des Beaux-Arts, his lively sculptures suited the taste of his contemporaries. Poet Paul-Armand Silvestre characterized Falguière as “the purest representative of the Greek tradition in our French sculpture,” and the state bought his works frequently for public display. Although the jury didn’t choose The Poet as the winning monument, a large version was erected in Paris’s Square de l’Opéra-Louis-Jouvet, which it graces to this day.
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="objectsound"><a href="" onclick="return onClickAudio();"><img class="clickableicon" alt="Play Sound" src="img/icons/musical-note.svg" alt="MusicNote"></a></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="objectvideo"><a href="" onclick="return onClickVideo();"><img class="clickableicon" alt="Play Video" src="img/icons/play-circle.svg"></a></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="objectlocation"><a href="" onclick="return onClickMap();"><img class="clickableicon" src="img/icons/map-marker.svg"></a></div>
+              </div>
+            </div>
+            <div class="audio" style="display: none">
+              <div class="embed-responsive embed-responsive-16by9">
+                <audio controls>
+                  <!-- src should be path to object's sound file-->
+                  <source src="sound/TheCave.mp3" type="audio/mpeg">
+                    Your browser does not support this audio element.
+                  </audio>
+                </div>
+              </div>
+              <div class="video" style='display: none'>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <!-- src should be link to object's video-->
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HbCBxlxsXdY?rel=0"></iframe>
+                </div>
+              </div>
+              <div class="map" style="display: none">
+                <!-- src should be path to map of object's location -->
+                <img class="img-responsive" alt="Map of Mead Museum" src="img/meadgooglemap.jpg">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <% include partials/header %>
+
