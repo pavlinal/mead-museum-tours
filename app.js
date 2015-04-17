@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 
 // Routes:
+var object = require('./routes/object');
 var objects = require('./routes/objects');
 var main = require('./routes/main');
 
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Using routes:
 app.use('/objects', objects);
+app.use('/object', object);
 app.use('/', main);
 
 app.get('/', function (req, res) {

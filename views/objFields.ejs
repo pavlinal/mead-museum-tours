@@ -1,0 +1,16 @@
+<!-- views/objFields.ejs -->
+
+<% include partials/head %>
+<% include partials/header %>
+
+    <h1><%= title %></h1>
+ 
+    <!-- <% for(var id in objects) { %> -->
+        <p>
+            <%= object.id %> .  <%= object.title %> .  <%= object.makers %> .  <%= object.culture %> .  <%= object.location %> .    
+            <%= object.date %> .  <%= object.materials %> .  <%= object.measurements %> .  <%= object.asc_num %> .  <%= object.credit_line %> .  <%= object.desc %> .  <%= object.room %> .  <%= object.pic %>  .  <%= object.sound %> .
+            <%= object.video %> .  <%= object.tour %> 
+        </p>
+    <% } %>
+
+<% include partials/footer %>
