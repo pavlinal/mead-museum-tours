@@ -1,0 +1,43 @@
+<% include partials/head %>
+
+<% include partials/header %>
+
+<div id="content" class="basic">
+	<div class="tourdetail">
+		<div class="box">
+			<!-- Tour name-->
+			<div id="tourname">
+				<h1>Tour test</h1>
+			</div>
+			<div class="insetbox">
+				<a href="" onclick="return onClickExpandTour();">
+					<img class="img-responsive" src="img/icons/text.svg" alt="Expand" style="margin: 20px auto 20px auto; min-width: 40px; max-width: 8%;">
+				</a>
+				<!-- Tour's description-->
+				<div class="tourdescription" style='display: none'>
+					<div class="textblock" style="text-align: center">
+						Description of the tour
+					</div>
+				</div>
+				<div id="objectslisttour">
+					<h3>Tour stops</h3>
+					<div class="list-group">
+						<!-- should be repeated for all objects in the tour-->
+						<!-- id in href should be the object's id-->
+						<a href="#object?id=test" class="list-group-item">
+							<div class="objecttour">
+								<!-- src should be path to the object's photo-->
+								<img class="img-responsive" src="img/yellowmead.jpg" alt="">
+							</div>
+							<!-- title of the object-->
+							<div id="tourtitle">
+								Intro
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% include partials/header %>

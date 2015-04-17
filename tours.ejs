@@ -1,0 +1,39 @@
+<% include partials/head %>
+
+<% include partials/header %>
+
+<div id="content" class="basic">
+	<div class="tours">
+		<div class="box">
+			<h1>Tours</h1>
+			<div class="insetbox">
+				<p>
+					Take a tour of select objects from across the collections in Visible Storage. 
+				</p>
+				<p>
+					Objects on these tours are grouped thematically based on their similar function or decorative design elements.
+				</p>
+				<div class="container">
+					<div class="row">
+						<!-- this should be repeated for all the tours in the system-->
+						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+							<!-- the id in the href should be the id of the actual tour-->
+							<a class="thumbnail" href="#tourdetail?id=intro">
+								<div class="thumbnaillist">
+									<!-- the src should be the path to the tour's key photo-->
+									<img class="img-responsive" src="img/yellowmead.jpg" alt="">
+								</div>
+								<!-- the title of the tour-->
+								<div id="tourtitle">
+									Introductory tour
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include partials/header %>
