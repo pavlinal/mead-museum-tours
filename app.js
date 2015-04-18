@@ -18,8 +18,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Using routes:
-app.use('/objects', objects);
-app.use('/object', object);
+app.use('/', objects);
+app.use('/', object);
 app.use('/', main);
 
 app.get('/', function (req, res) {
