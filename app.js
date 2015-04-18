@@ -4,8 +4,10 @@ var express = require('express');
 var path = require('path');
 
 // Routes:
-var objects = require('./routes/objects');
 var main = require('./routes/main');
+var tours = require('./routes/tours');
+var objects = require('./routes/objects');
+
 
 // Create the express application:
 var app = express();
@@ -17,8 +19,9 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Using routes:
-app.use('/', objects);
 app.use('/', main);
+app.use('/', tours);
+app.use('/', objects);
 
 app.get('/', function (req, res) {
   res.redirect('/index');
