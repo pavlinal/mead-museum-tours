@@ -44,7 +44,7 @@ img {
     overflow: hidden;
 }
 
-.tourdetail, .tours, .about, .search {
+.tourdetail {
     color: black;
 
 }
@@ -53,6 +53,14 @@ img {
     max-width: 252.5px;
     max-height: 189.375px;
     overflow: hidden;
+}
+
+.tours {
+    color: black;
+}
+
+.about {
+    color: black;
 }
 
 .textblock {
@@ -104,9 +112,9 @@ img {
     font-weight: 400;
 }
 
-.basic {
+.intro-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 10px;
+    padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
     background: url(../img/brownmead.jpg) no-repeat center center;
