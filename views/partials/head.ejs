@@ -46,14 +46,21 @@
     $(document).ready(function(){
         console.log("ready");
 
-        if(location.hash != ''){
+        var id;
+        $("#passID").click(function(){
+          id=$(this).attr("data-id");
+	  console.log("The ID is: " + id);
+          $.post("/tourdetail",{id: id})
+        });
+
+       /*if(location.hash != ''){
             changePageHash();
         }
 
         $('a[href^="#"]').click(function(e){ 
             e.preventDefault();
             location.hash = $(this).attr('href');
-        });
+        });*/
 
     });
 

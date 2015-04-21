@@ -8,7 +8,7 @@ router.get('/index', function(req, res) {
 
 /*GET about*/
 router.get('/about', function(req, res) {
-  res.render('about', {title:'About'});
+  res.render('about', {title:'About the Mead Museum'});
 });
 
 /*GET feedback*/

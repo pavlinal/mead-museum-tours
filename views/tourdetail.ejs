@@ -1,3 +1,4 @@
+<!--views/tourdetail.ejs-->
 <% include partials/head %>
 
 <% include partials/header %>
@@ -7,7 +8,7 @@
 		<div class="box">
 			<!-- Tour name-->
 			<div id="tourname">
-				<h1>Tour test</h1>
+				<h1><%= id %></h1>
 			</div>
 			<div class="insetbox">
 				<a href="" onclick="return onClickExpandTour();">
@@ -16,7 +17,7 @@
 				<!-- Tour's description-->
 				<div class="tourdescription" style='display: none'>
 					<div class="textblock" style="text-align: center">
-						Description of the tour
+						<%= id %>
 					</div>
 				</div>
 				<div id="objectslisttour">

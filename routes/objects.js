@@ -3,18 +3,6 @@ var router = express.Router();
 
 var dblib = require('../lib/db');
 
-/*GET objects*/
-/*router.get('/list', function(req, res) {
-  var objects = dblib.getObjects(function(error, objects) {
-    if (error) {
-      //req.flash('', error);
-      //res.redirect('/');
-    } else {
-      res.render('list', {title:'List of Objects', objects:objects});
-    }
-  }); 
-});*/
-
 /*GET object*/
 router.get('/object', function(req, res) {
   res.render('object', {title:'Name of the Object'});
@@ -22,8 +10,19 @@ router.get('/object', function(req, res) {
 
 /*GET search*/
 router.get('/search', function(req, res) {
-  res.render('search', {title:'Search'});
+  // Get the field and query
+  var field = document.getElementById("searchBy");
+  var query = req.body.query;
+  var searchRes = dblib.search(field, query, function(error, result) {
+    if (error) {
+      //req.flash('', error);
+      //res.redirect('/');
+    } else {
+      res.render('search', {title:'Search', result:result});
+    }
+  });
 });
+
 
 
 module.exports = router;
