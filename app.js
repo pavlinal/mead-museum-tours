@@ -1,5 +1,5 @@
 var express = require('express');
-
+var bodyParser = require("body-parser");
 // Regular express built-in middleware:
 var path = require('path');
 
@@ -11,6 +11,10 @@ var objects = require('./routes/objects');
 
 // Create the express application:
 var app = express();
+
+//?
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Setup the view engine:
 app.set('views', path.join(__dirname, 'views'));
@@ -29,8 +33,4 @@ app.get('/', function (req, res) {
 
 // Export the app as the module:
 module.exports = app;
-
-/*var server = app.listen(3000, function () {
-  console.log('Listening on port %d', server.address().port);
-});*/
 

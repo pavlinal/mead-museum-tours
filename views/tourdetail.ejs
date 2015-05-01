@@ -1,40 +1,66 @@
 <!--views/tourdetail.ejs-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
 <% include partials/head %>
+<script>
+      $(document).ready(function(){
+        var id;
+        $("#passID").click(function(){
+          id=$(this).attr("data-id");
+          $.post("http://localhost:3000/object",{id: id}, function(data){
+            if(data==='done')
+              {
+                alert("login success");
+              }
+          });
+        });
+      });
+    </script>
+</head>
+
+<body onhashChange="changePageHash()">
 
 <% include partials/header %>
 
 <div id="content" class="basic">
 	<div class="tourdetail">
 		<div class="box">
+                	<% for(var i=0; i<tour.length; i++){ %>
 			<!-- Tour name-->
 			<div id="tourname">
-				<h1><%= id %></h1>
+				<h1><%= tour[i].name %></h1>
 			</div>
 			<div class="insetbox">
 				<a href="" onclick="return onClickExpandTour();">
 					<img class="img-responsive" src="img/icons/text.svg" alt="Expand" style="margin: 20px auto 20px auto; min-width: 40px; max-width: 8%;">
 				</a>
 				<!-- Tour's description-->
-				<div class="tourdescription" style='display: none'>
+				<div class="tourdescription" style="display: none">
 					<div class="textblock" style="text-align: center">
-						<%= id %>
+						<%= tour[i].desc %>
 					</div>
 				</div>
+                                <% } %>
+                                
 				<div id="objectslisttour">
 					<h3>Tour stops</h3>
 					<div class="list-group">
+                                                <% for(var i=0; i<objects.length; i++){ %>
 						<!-- should be repeated for all objects in the tour-->
 						<!-- id in href should be the object's id-->
-						<a href="#object?id=test" class="list-group-item">
+						<a id="passID" href="/object" class="list-group-item" data-id='<%= objects[i].id %>'>
 							<div class="objecttour">
 								<!-- src should be path to the object's photo-->
 								<img class="img-responsive" src="img/yellowmead.jpg" alt="">
 							</div>
 							<!-- title of the object-->
 							<div id="tourtitle">
-								Intro
+                                                           <%= objects[i].title %>
 							</div>
 						</a>
+<% } %>
 					</div>
 				</div>
 			</div>

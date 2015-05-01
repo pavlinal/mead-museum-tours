@@ -10,19 +10,28 @@ router.get('/object', function(req, res) {
 
 /*GET search*/
 router.get('/search', function(req, res) {
-  // Get the field and query
-  var field = document.getElementById("searchBy");
-  var query = req.body.query;
-  var searchRes = dblib.search(field, query, function(error, result) {
-    if (error) {
-      //req.flash('', error);
-      //res.redirect('/');
-    } else {
-      res.render('search', {title:'Search', result:result});
+  res.render('search', {title:'Search'});
+});
+
+//POST search query 
+router.post('/searchquery',function(req, res) {
+  field = req.body.f;
+  query = req.body.q;
+res.end("");
+
+});
+
+//GET search query
+router.get('/searchquery', function(req, res){
+
+  dblib.search(field, query, function(error, results) {
+   if (error) {
+    } 
+    else {
+      res.render('searchresults', {title: 'Search Results', results: results});
     }
   });
 });
-
 
 
 module.exports = router;

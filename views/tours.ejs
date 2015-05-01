@@ -1,6 +1,26 @@
 <!--views/tours.ejs-->
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
 <% include partials/head %>
+<script>
+      $(document).ready(function(){
+        var id;
+        $("#passID").click(function(){
+          id=$(this).attr("data-id");
+          $.post("http://localhost:3000/tourdetail",{id: id}, function(data){
+            if(data==='done')
+              {
+                alert("login success");
+              }
+          });
+        });
+      });
+    </script>
+</head>
+
+<body onhashChange="changePageHash()">
 
 <% include partials/header %>
 
@@ -22,10 +42,10 @@
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
 							<!-- the id in the href should be the id of the actual tour-->
 							<% var tourid = tours[i].id %>
-							<a id="passID" class="thumbnail" href='/tourdetail' data-id='<%= tourid %>'>
+							<a id="passID" class="thumbnail" href='/tourdetail' data-id='<%= tours[i].id %>'>
 								<div class="thumbnaillist">
 									<!-- the src should be the path to the tour's key photo-->
-									<img class="img-responsive" src="img/yellowmead.jpg" alt="">
+									<img class="img-responsive" src='img/<%= tours[i].img %>' alt="">
 								</div>
 								<!-- the title of the tour-->
 								<div id="tourtitle">
