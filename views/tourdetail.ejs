@@ -3,21 +3,20 @@
 <html lang="en">
 
 <head>
-<% include partials/head %>
-<script>
+   <% include partials/head %>
+   <script>
       $(document).ready(function(){
         var id;
-        $("#passID").click(function(){
+        $(".passID").click(function(){
           id=$(this).attr("data-id");
+          console.log("The id is: "+ id);
           $.post("http://localhost:3000/object",{id: id}, function(data){
-            if(data==='done')
-              {
-                alert("login success");
-              }
+            if(data==='done'){}
           });
         });
       });
-    </script>
+   </script>
+
 </head>
 
 <body onhashChange="changePageHash()">
@@ -50,7 +49,7 @@
                                                 <% for(var i=0; i<objects.length; i++){ %>
 						<!-- should be repeated for all objects in the tour-->
 						<!-- id in href should be the object's id-->
-						<a id="passID" href="/object" class="list-group-item" data-id='<%= objects[i].id %>'>
+						<a href="/object" class="list-group-item passID" data-id='<%= objects[i].id %>' id='<%= objects[i].id %>'>
 							<div class="objecttour">
 								<!-- src should be path to the object's photo-->
 								<img class="img-responsive" src="img/yellowmead.jpg" alt="">

@@ -9,18 +9,6 @@ var tourid;
 // The id of the object
 var objectid;
 
-/*GET post*/
-router.get('/post', function(req, res) {
-  res.render('post', {title:'GET call', tourid:1});
-});
-
-/*POST post*/
-router.post('/login',function(req,res){
-  var id=req.body.id;
-  //console.log("Id = "+id);
-  res.end("yes");
-});
-
 /*GET tours*/
 router.get('/tours', function(req, res) {
   var objects = dblib.getTours(function(error, tours) {

@@ -3,21 +3,19 @@
 <html lang="en">
 
 <head>
-<% include partials/head %>
-<script>
+   <% include partials/head %>
+   <script>
       $(document).ready(function(){
         var id;
-        $("#passID").click(function(){
+        $(".passID").click(function(){
           id=$(this).attr("data-id");
+          console.log("The id is: "+ id);
           $.post("http://localhost:3000/tourdetail",{id: id}, function(data){
-            if(data==='done')
-              {
-                alert("login success");
-              }
+            if(data==='done'){}
           });
         });
       });
-    </script>
+   </script>
 </head>
 
 <body onhashChange="changePageHash()">
@@ -41,7 +39,7 @@
 						<% for(var i=0; i < tours.length; i++) { %>
 						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
 							<!-- the id in the href should be the id of the actual tour-->
-							<a id="passID" class="thumbnail" href='/tourdetail' data-id='<%= tours[i].id %>'>
+							<a class="thumbnail passID" href='/tourdetail' data-id='<%= tours[i].id %>' id='<%= tours[i].id %>'>
 								<div class="thumbnaillist">
 									<!-- the src should be the path to the tour's key photo-->
 									<img class="img-responsive" src='img/yellowmead.jpg' alt="">
