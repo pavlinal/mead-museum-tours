@@ -1,5 +1,24 @@
-<% include partials/head %>
+<!--views/searchresults.ejs-->
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+   <% include partials/head %>
+      <script>
+      $(document).ready(function(){
+        var id;
+        $(".passID").click(function(){
+          id=$(this).attr("data-id");
+          console.log("The id is: "+ id);
+          $.post("http://localhost:3000/object",{id: id}, function(data){
+            if(data==='done'){}
+          });
+        });
+      });
+   </script>
+</head>
+
+<body onhashChange="changePageHash()">
 <% include partials/header %>
 
 <div id="content" class="basic">
@@ -24,7 +43,7 @@
 			<div class="insetbox">
 				<div class="list-group" id="searchresults">
 					<% for(var i=0; i < results.length; i++) { %>
-					<a href='/object?id=<%= results[i].id %>' class="list-group-item"> 
+					<a href='/object' class="list-group-item passID" data-id='<%= results[i].id %>' id='<%= results[i].id %>'> 
                     <div class="objecttour"> 
                         <!-- src should be the path to the object s photo --> 
                         <img class="img-responsive" src='img/objPic/<%= results[i].pic %>.jpg' alt=""> 
