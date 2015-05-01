@@ -54,9 +54,14 @@
             <a href="" onclick="return onClickExpand();"><img src="img/icons/text.svg" alt="Expand" style="margin: 20px; width: 10%"></a>
             <div class="extratext" style='display: none'>
               <div class="textblock">
+                Lorem ipsum cubilia inceptos integer sapien tristique arcu id proin, dolor at magna praesent mauris sed integer mauris mollis ornare, urna ligula habitant tempor molestie hendrerit curabitur faucibus sed egestas tincidunt fringilla curabitur condimentum, bibendum primis scelerisque lorem odio nullam, conubia nisi eros mattis nullam varius pulvinar sodales amet fusce sociosqu dui fusce donec conubia, sollicitudin dapibus pharetra malesuada adipiscing faucibus volutpat in amet, sagittis pharetra inceptos iaculis quis dictum bibendum faucibus felis.
+                <!--
+                Dynamic object description
                 <% if(object[i].decs!=null) {%>
                 <%= object[i].desc %>
                 <% } %>
+
+              -->
               </div>
             </div>
             <div class="row">
@@ -71,7 +76,7 @@
               </div>
             </div>
             <div class="audio" style="display: none">
-              <div class="embed-responsive embed-responsive-16by9">
+              <div class="embed-responsive embed-responsive-16by9" style="padding-bottom: 40px;">
                 <audio controls>
                   <!-- src should be path to object's sound file-->
                   <source src="sound/<%= object[i].sound %>.mp3" type="audio/mpeg">
