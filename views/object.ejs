@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-sm-6">
           <!-- src should be path to object's photo -->
-          <img class="img-responsive" src="img/ThePoet.jpg" alt="ObjectPhoto"> 
+          <img class="img-responsive" src="img/objPic/<%= object[i].pic %>.jpg" alt="ObjectPhoto"> 
         </div>
         <div class="col-sm-6" style="font-size: 1.5em">
 
@@ -74,7 +74,7 @@
               <div class="embed-responsive embed-responsive-16by9">
                 <audio controls>
                   <!-- src should be path to object's sound file-->
-                  <source src="sound/TheCave.mp3" type="audio/mpeg">
+                  <source src="sound/<%= object[i].sound %>.mp3" type="audio/mpeg">
                     Your browser does not support this audio element.
                   </audio>
                 </div>
@@ -82,6 +82,7 @@
               <div class="video" style='display: none'>
                 <div class="embed-responsive embed-responsive-16by9">
                   <!-- src should be link to object's video-->
+                  <!-- should be <iframe class="embed-responsive-item" src="<%= object[i].video %>"></iframe> when there is an embedded youtube video in the database-->
                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HbCBxlxsXdY?rel=0"></iframe>
                 </div>
               </div>

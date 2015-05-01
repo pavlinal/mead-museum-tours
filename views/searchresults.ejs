@@ -42,6 +42,7 @@
 			</form>
 			<div class="insetbox">
 				<div class="list-group" id="searchresults">
+					<% if(results[0] != null) {%>
 					<% for(var i=0; i < results.length; i++) { %>
 					<a href='/object' class="list-group-item passID" data-id='<%= results[i].id %>' id='<%= results[i].id %>'> 
                     <div class="objecttour"> 
@@ -52,6 +53,7 @@
                     <div id="tourtitle"> <%= results[i].title %> </div> 
                 	</a>
 
+                	<% } %>
                 	<% } %>
 				</div>
 			</div>
