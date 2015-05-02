@@ -6,18 +6,10 @@ var dblib = require('../lib/db');
 // The id of the tour
 var tourid;
 
-// The id of the object
-var objectid;
-
 /*GET tours*/
 router.get('/tours', function(req, res) {
   var objects = dblib.getTours(function(error, tours) {
-    if (error) {
-      //req.flash('', error);
-      //res.redirect('/');
-    } else {
       res.render('tours', {title:'Tours', tours:tours});
-    }
   }); 
 });
 
@@ -38,18 +30,6 @@ router.get('/tourdetail', function(req, res) {
   });
 });
 
-/*POST object*/
-router.post('/object', function(req, res) {
-  // Get the tour id
-  objectid = req.body.id;
-});
 
-/*GET tourdetail*/
-router.get('/object', function(req, res) {
-  // Get tour details
-  dblib.getObjectDetails(objectid, function(error, object) {
-      res.render('object', {title:'Object Detail', object: object});
-  });
-});
 
 module.exports = router;

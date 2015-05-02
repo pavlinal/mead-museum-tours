@@ -3,9 +3,22 @@ var router = express.Router();
 
 var dblib = require('../lib/db');
 
+
+// The id of the object
+var objectid;
+
+/*POST object*/
+router.post('/object', function(req, res) {
+  // Get the object id
+  objectid = req.body.id;
+});
+
 /*GET object*/
 router.get('/object', function(req, res) {
-  res.render('object', {title:'Name of the Object'});
+  // Get object details
+  dblib.getObjectDetails(objectid, function(error, object) {
+      res.render('object', {title:'Object Detail', object: object});
+  });
 });
 
 /*GET search*/

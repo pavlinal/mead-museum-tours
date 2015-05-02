@@ -12,7 +12,7 @@ var objects = require('./routes/objects');
 // Create the express application:
 var app = express();
 
-//?
+//BodyParser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
