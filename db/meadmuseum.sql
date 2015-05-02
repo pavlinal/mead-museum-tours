@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.41, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.43, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: meadmuseum
 -- ------------------------------------------------------
--- Server version	5.5.41-0ubuntu0.14.04.1
+-- Server version	5.5.43-0ubuntu0.14.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,7 +40,7 @@ CREATE TABLE `objects` (
   `video` varchar(2024) DEFAULT NULL,
   `tour` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +49,7 @@ CREATE TABLE `objects` (
 
 LOCK TABLES `objects` WRITE;
 /*!40000 ALTER TABLE `objects` DISABLE KEYS */;
-INSERT INTO `objects` VALUES (1,'chimu whistling vessel with humanoid monkey','Unknown Pre-Columbian, Chimu','South America; Peru',NULL,NULL,'ceramic','Overall: 5 13/16 in x 7 7/16in','AC 1991.50','Gift',NULL,'1',NULL,NULL,NULL,1),(2,'  Confidence and Admiration','  Johnson, Eastman ','  American (1824-1906)','  United States; Washington, DC','  ca. 1859',' oil on canvas',' stretcher: 11 1/4 x 9 1/8 in.; 28.575 x 23.1775 cm; frame: 16 1/4 x 14 3/8 x 2 5/8 in.; 41.275 x 36.5125 x 6.6675 cm',' AC 1958.48 ',' Museum purchase',NULL,' 1 ',NULL,NULL,NULL,1),(3,' The Poet(Le poete)','  Falguiere, Jean Alexandre',' French (1831-1900)',NULL,'1897','  bronze',NULL,' AC 1974.2',' Museum purchase',' 1 ',NULL,NULL,NULL,' 1 ',1),(4,' Belt (nkody makwoom)',' Unknown African; Congolese(Zairian);',' Kuba people ',' Africa; Democratic Republic of Congo','  20th century ','  cowrie shells, glass beads, fiber',' overall: 55 x 2 in; 139.7 x 5.08cm ','  AC 2000.84 ','Gift of Gilbert and Roda Graha',NULL,' 1 ',NULL,NULL,NULL,1),(5,' The Triumph of Amphitrite',' Taraval, Hughes',' French(1729-1785)',NULL,' oil on canvas',' Stretcher: 50 15/16 in x 38 1/4 in; 139.38125 cm x 97.155cm','  AC 1976.2',' Purchased in honor ',NULL,' 1',NULL,NULL,NULL,' 1 ',1),(6,' Landscape with Overturned Wagon in a Storm ',' Loutherbourg, Philippe Jacques de',' French(1740-1812)',NULL,' 1809 ',' oil on canvas','   stretcher: 28 1/4 x 41 1/2\"; frame: 41 x 54 1/8 x 4 1/4\" ','   AC 1974.30',' Purchased in honor of Susan D',NULL,'  1 ',NULL,NULL,NULL,1);
+INSERT INTO `objects` VALUES (1,'Chimu Whistling Vessel with Humanoid Monkey','Unknown Pre-Columbian, Chimu','South America; Peru',NULL,NULL,'ceramic','Overall: 5 13/16 in x 7 7/16in','AC 1991.50','Gift',NULL,'1','pic1','sound1','https://www.youtube.com/embed/HbCBxlxsXdY?rel=0',1),(2,'  Confidence and Admiration','  Johnson, Eastman ','  American (1824-1906)','  United States; Washington, DC','  ca. 1859',' oil on canvas',' stretcher: 11 1/4 x 9 1/8 in.; 28.575 x 23.1775 cm; frame: 16 1/4 x 14 3/8 x 2 5/8 in.; 41.275 x 36.5125 x 6.6675 cm',' AC 1958.48 ',' Museum purchase',NULL,' 1 ','pic2','sound2','https://www.youtube.com/embed/HbCBxlxsXdY?rel=0',1),(3,' The Poet(Le poete)','  Falguiere, Jean Alexandre',' French (1831-1900)',NULL,'1897','  bronze',NULL,' AC 1974.2',' Museum purchase',' 1 ',NULL,NULL,'sound3','https://www.youtube.com/embed/HbCBxlxsXdY?rel=0',1),(4,' Belt (nkody makwoom)',' Unknown African; Congolese(Zairian);',' Kuba people ',' Africa; Democratic Republic of Congo','  20th century ','  cowrie shells, glass beads, fiber',' overall: 55 x 2 in; 139.7 x 5.08cm ','  AC 2000.84 ','Gift of Gilbert and Roda Graha',NULL,' 1 ','pic4','sound4','https://www.youtube.com/embed/HbCBxlxsXdY?rel=0',2),(5,' The Triumph of Amphitrite',' Taraval, Hughes',' French(1729-1785)',NULL,' oil on canvas',' Stretcher: 50 15/16 in x 38 1/4 in; 139.38125 cm x 97.155cm','  AC 1976.2',' Purchased in honor ',NULL,' 1',NULL,'pic5','sound5','https://www.youtube.com/embed/HbCBxlxsXdY?rel=0',2),(6,' Landscape with Overturned Wagon in a Storm ',' Loutherbourg, Philippe Jacques de',' French(1740-1812)',NULL,' 1809 ',' oil on canvas','   stretcher: 28 1/4 x 41 1/2\"; frame: 41 x 54 1/8 x 4 1/4\" ','   AC 1974.30',' Purchased in honor of Susan D',NULL,'  1 ','pic6','sound6','https://www.youtube.com/embed/HbCBxlxsXdY?rel=0',1);
 /*!40000 ALTER TABLE `objects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,8 +89,9 @@ CREATE TABLE `tour` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT NULL,
   `desc` varchar(30) DEFAULT NULL,
+  `pic` mediumblob,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +100,7 @@ CREATE TABLE `tour` (
 
 LOCK TABLES `tour` WRITE;
 /*!40000 ALTER TABLE `tour` DISABLE KEYS */;
-INSERT INTO `tour` VALUES (1,'1','test tour');
+INSERT INTO `tour` VALUES (1,'Interactive Artifacts','test tour','pic1'),(2,'2','second test tour','pic6');
 /*!40000 ALTER TABLE `tour` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-05 10:38:36
+-- Dump completed on 2015-05-02 23:54:02
