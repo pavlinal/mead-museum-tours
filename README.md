@@ -162,6 +162,10 @@ For example, if you wanted to place all objects with English artists into anothe
 
 This is assuming that there is already a tour with the id number of 5 located in the tour table!
 
+#### Backing up the database
+
+To backup the database please refer to this [guide](http://www.thegeekstuff.com/2008/09/backup-and-restore-mysql-database-using-mysqldump/).
+
 ## Folder Structure
 
 * __/bin__ - the startup scripts
@@ -187,3 +191,73 @@ This is assuming that there is already a tour with the id number of 5 located in
 * __README.md__
 
 ## The Implementation
+
+### The Frontend
+
+### The Database
+
+### The Backend
+
+The backend of the application uses the [Express](http://expressjs.com/) framework for Node.js. Following is the organization of the backend code:
+
+* __/bin__
+* __/lib/db__
+    * __db.js__
+* __/routes__
+    * __main.js__
+    * __objects.js__
+    * __tours.js__
+* __/views__
+    * __/partials__
+* __app.js__
+* __package.json__
+
+The */bin* directory which contains the *www* file is a standard part of the Express framework. It specifies that the application will run on port 3000 and it allows us to simplify the act of running the application into one simple command: *npm start*.
+
+The *package.json* file contains the metadata for the application as well as the list of the dependencies. To learn more about package.json see this [interactive guide](http://browsenpm.org/package.json).
+
+The *app.js* file is the main file of the application. It specifies the libraries and the routes that are required. It also defines the *public* folder as the folder that will contain all the multimedia as well as the css and js libraries and the *views* folder as the folder that will contain all the code for the frontend of the application.
+
+In the *lib/db* directory is the *db.js* file. In this file, the connection pool is used to establish a connection to the MYSQL database. The *db.js* file also contains functions that access the database and return the data requested.
+
+In the */routes* folder are three *.js* files that call the database functions from the *db.js* file and then pass the data acquired from the database to the frontend. In these files each of the application pages is rendered and if the page is to be dynamic, it is also passed data from the datbase. The *main.js* file contains the routes to the static pages (index, about and feedback). The *objects.js* file contains the routes to object related pages (object and search). And the *tours.js* file contains the routes to tour related pages (tours and tourdetail).
+
+In the */views* folder is all the code for the frontend of the application. We are using a combination of html and [EJS](http://www.embeddedjs.com/) for our frontend code. Each of the .ejs files represents one of the application pages. In the */partials* folder is the code for the elements that repeat on all the application pages - head, footer and the navigation bar. We use EJS to insert these elements into the application pages. We also use EJS to insert JavaScript code into the pages in order to dynamically display the data from the database. Lastly we use jQuery and Ajax to dynamical determine which link a user clicked on, so that we can display details of a tour or an object in response.
+
+#### Further Reading
+
+##### Node.js
+
+* http://www.nodebeginner.org/
+* http://www.hongkiat.com/blog/node-js-server-side-javascript/
+
+##### Express
+
+* http://code.tutsplus.com/tutorials/introduction-to-express--net-33367
+* http://code.tutsplus.com/tutorials/nodejs-for-beginners--net-26314
+* http://teknosains.com/i/simple-crud-nodejs-mysql
+* https://scotch.io/tutorials/use-ejs-to-template-your-node-application
+* http://cwbuecheler.com/web/tutorials/2014/restful-web-app-node-express-mongodb/
+* http://webapplog.com/express-js-tutorial-instagram-gallery-example-app-with-storify-api/
+* http://gistpages.com/2013/10/31/simple_application_with_expressjs
+
+##### Connecting to a MYSQL Database
+
+* https://github.com/felixge/node-mysql#establishing-connections
+* http://www.hacksparrow.com/using-mysql-with-node-js.html
+* http://www.codediesel.com/nodejs/querying-mysql-with-node-js/
+* http://utahjs.com/2010/09/22/nodejs-and-mysql-introduction/
+* http://www.giantflyingsaucer.com/blog/?p=2596
+* http://outof.me/experimenting-with-mysql-connections-and-nodeexpress/
+* https://gist.github.com/clarle/3180770
+
+##### JQuerry & Ajax
+
+* http://api.jquery.com/jQuery.ajax/
+* https://learn.jquery.com/ajax/jquery-ajax-methods/
+* http://www.w3schools.com/JQuery/jquery_ajax_get_post.asp
+* http://codeforgeek.com/2014/09/handle-get-post-request-express-4/
+
+### Next Steps
+
+The next features to implement would be the administrators interface where one could login and then add/modify/remove objects and tours from the database.
