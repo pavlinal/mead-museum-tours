@@ -1,6 +1,6 @@
 # Mead Art Museum
 
-As the [Mead Art Museum](https://www.amherst.edu/museums/mead) at Amherst College develops a suite of community and school resources, one of the thematic focal points is on art and music - works that include representations of instruments or music making, or objects that themselves have audible components that are not readily accessible to the viewer. This is where digital technology comes in. Tho goal of this project is to develop user-friendly, and visually-compelling multi-device web application compatible with both Android and iOS devices that will provide supplementary audio, video and written content for a selection of objects in the museum.
+As the [Mead Art Museum](https://www.amherst.edu/museums/mead) at Amherst College develops a suite of community and school resources, one of the thematic focal points is on art and music - works that include representations of instruments or music making, or objects that themselves have audible components that are not readily accessible to the viewer. This is where digital technology comes in. The goal of this project is to develop user-friendly, and visually-compelling multi-device web application compatible with both Android and iOS devices that will provide supplementary audio, video and written content for a selection of objects in the museum.
 
 ## Table of contents
 
@@ -193,9 +193,22 @@ To backup the database please refer to this [guide](http://www.thegeekstuff.com/
 ## The Implementation
 
 ### The Frontend
+The frontend of the application uses [Bootstrap](http://getbootstrap.com/) to provide a beautiful, fully responsive design. Following is the organization of the frontend code:
+* __/public__
+    * __/img__
+    	* __/objPics__
+    * __/sound__
+    * __/css__
+    	* __mead-museum-main.css__
+
+The mead-museum-main.css file contains all the customized CSS for the application, it is included for every page of the application. If you wish to make any changes to the style of the application you should do so by altering this file. 
+
+All the object pictures are contained in /public/img/objPics. They should be named to match what is listed in the database as the object's picture filename. 
+
+All the sounds for the objects are contained in /public/sound. The sounds should be in .mp3 format and should be named to match what is listen in the database as the object's sound filename. 
 
 ### The Database
-The information behind the app is contained within a [MySql] databases named meadmuseum. There are four tables within the database:
+The information behind the app is contained within a [MySql](https://www.mysql.com/) database named meadmuseum. There are four tables within the database:
 
 * __objects__
 * __tour__
@@ -265,12 +278,16 @@ In the */views* folder is all the code for the frontend of the application. We a
 * http://outof.me/experimenting-with-mysql-connections-and-nodeexpress/
 * https://gist.github.com/clarle/3180770
 
-##### JQuerry & Ajax
+##### JQuery & Ajax
 
 * http://api.jquery.com/jQuery.ajax/
 * https://learn.jquery.com/ajax/jquery-ajax-methods/
 * http://www.w3schools.com/JQuery/jquery_ajax_get_post.asp
 * http://codeforgeek.com/2014/09/handle-get-post-request-express-4/
+
+##### Bootstrap
+
+* http://www.w3schools.com/bootstrap/
 
 ### Next Steps
 
