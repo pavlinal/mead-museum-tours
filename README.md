@@ -195,6 +195,20 @@ To backup the database please refer to this [guide](http://www.thegeekstuff.com/
 ### The Frontend
 
 ### The Database
+The information behind the app is contained within a [MySql] databases named meadmuseum. There are four tables within the database:
+
+* __objects__
+* __tour__
+* __tour_order__
+* __room__
+
+The *objects* table contains all object information, with each row entry being an individual object.
+The *tour* table contains general information for each of the tours.
+The *tour_order* table contains the order in which the objects appear in their corresponding tours.
+The *room* table contains information on the room locations within the museum for possible future implementation of the map feature.
+
+The columns, along with their corresponding datatype, can be displayed with the following command, once logged into MySql:
+	SHOW COLUMNS FROM 'tourname';
 
 ### The Backend
 
