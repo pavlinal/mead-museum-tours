@@ -207,6 +207,15 @@ All the object pictures are contained in /public/img/objPics. They should be nam
 
 All the sounds for the objects are contained in /public/sound. The sounds should be in .mp3 format and should be named to match what is listen in the database as the object's sound filename. 
 
+##### Information about customizing the feedback form
+The feedback form can be replaced by a customized [Google Form](https://www.google.com/forms/about/). Simply create a Google Form from the Google account where you would like to recieve all the analytics. After you have finished creating your form, click on File/Embed... This will give you a link that looks something like this: 
+```html
+<iframe src="https://docs.google.com/forms/d/1BowUT1W5furF8_z1p0VSTSgLQevq-WJHA_QYbmlqA94/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> 
+````
+Take this and replace the 16th line in feedback.ejs (/views/feedback.ejs) with this new link. You only need to do this once! Even if you update or edit the form after you've placed the link into the feedback.ejs file, the link will still point to the most updated version of your Google Form.  
+
+
+
 ### The Database
 The information behind the app is contained within a [MySql](https://www.mysql.com/) database named meadmuseum. There are four tables within the database:
 
