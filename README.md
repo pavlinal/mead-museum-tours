@@ -79,6 +79,7 @@ Then navigate to http://localhost:3000/ in your favorite browser to see the appl
 
 The *mead-museum-tours* application uses a MYSQL database to store the information about the tours and the objects in the museum. When testing the application you can [populate the database from an sql file](#populating-the-database-from-an-sql-file) that we have provided. If you need to modify or extend the database you will need to [populate it manually](#manually-populating-the-database).
 
+Information on the included tables and their respective fields can be found below in the database subsection of the implementation information.
 ### Log into MYSQL
 
 To log into MYSQL run the following command in the terminal window of your Vagrant virtual machine:
@@ -109,6 +110,7 @@ Once you are logged into MYSQL, you will need to create a *meadmuseum* database,
 	mysql> use meadmuseum;
 
 #### View content of a table
+To view all instance rows of a table :
 
 	select * from objects;
 
@@ -217,20 +219,25 @@ Take this and replace the 16th line in feedback.ejs (/views/feedback.ejs) with t
 
 
 ### The Database
-The information behind the app is contained within a [MySql](https://www.mysql.com/) database named meadmuseum. There are four tables within the database:
+The information behind the app is contained within a [MySql](https://www.mysql.com/) database named meadmuseum. There are currently four tables within the database, each containing particular instances as rows, and fields as columns:
+
+If tables are altered, tables can be displayed once in the meadmuseum database by typing
+	SHOW TABLES;
 
 * __objects__
 * __tour__
-* __tour_order__
+* __tour_stop__
 * __room__
 
-The *objects* table contains all object information, with each row entry being an individual object.
-The *tour* table contains general information for each of the tours.
-The *tour_order* table contains the order in which the objects appear in their corresponding tours.
-The *room* table contains information on the room locations within the museum for possible future implementation of the map feature.
+The *objects* table contains all object information from title to video URL, with each row entry being an individual object.
+The *tour* table contains general information for each of the tours, including the auto-generated id, the name of the tour, a description field and a picture url field for the thumbnail to be displayed on the tours page, linking information between the instances in the object table and tour table.
+The *tour_order* table contains the order in which the objects appear in their corresponding tours. Columns include the auto-generated id, the id of the object, the id of the tour to which the object belongs to, and the order number in which the object appears within the tour.
+The *room* table contains information on the room locations within the museum for possible future implementation of the map feature. It currently contains columns for the auto-generated id, the name of the room, and a description field.
 
 The columns, along with their corresponding datatype, can be displayed with the following command, once logged into MySql:
 	SHOW COLUMNS FROM 'tourname';
+
+The initial id number fields are populated automatically as each object is added to the table. String fields are essentially text fields that must be surrounded by single quotations marks, and all else are number fields.
 
 ### The Backend
 
